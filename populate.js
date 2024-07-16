@@ -11,8 +11,10 @@ const start = async() => {
         console.log("Connected to DB!!!");
         await Product.deleteMany();
         await Product.create(jsonProducts);
+        process.exit(0);
     } catch (error) {
         console.log(error);
+        process.exit(1);
     }
 }
 
